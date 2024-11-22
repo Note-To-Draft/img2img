@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Img2Img - Image Tools</title>
+    <!-- Include Bootstrap CSS -->
+    {% include 'head-scripts.html' %}
+    <link rel="icon" href="static/favicon/favicon.ico">
+</head>
+<body>
+    <!-- Include the navbar -->
+    {% include 'navbar.html' %}
+
+    <div class="container text-center mt-5">
+        <h1>Welcome to IMG2IMG Image Tools</h1>
+        <p class="lead">Explore our image tools and blog articles.</p>
+        <div class="row mt-5">
+            <!-- Favicon Generator Card -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body">
+                        <h4 class="card-title" style="color: #ff9900;">Favicon Generator</h4>
+                        <p class="card-text lead">Quickly generate favicons for your website from any image.</p>
+                        <a href="{{ url_for('favicon_generator') }}" class="btn btn-lg text-white" style="background-color: #ff9900;">Try Now</a>
+                    </div>
+                </div>
+            </div>
+          
+            <!-- Convert to JPEG Card -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body">
+                        <h4 class="card-title" style="color: #ff9900;">Convert to JPEG</h4>
+                        <p class="card-text lead">Convert your images to high-quality JPEGs without losing detail.</p>
+                        <a href="{{ url_for('convert_to_jpeg') }}" class="btn btn-lg text-white" style="background-color: #ff9900;">Try Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body">
+                        <h4 class="card-title" style="color: #ff9900;">Convert to TIFF</h4>
+                        <p class="card-text lead">Convert your images to high-quality TIFF format.</p>
+                        <a href="{{ url_for('convert_to_tiff') }}" class="btn btn-lg text-white" style="background-color: #ff9900;">Try Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body">
+                        <h4 class="card-title" style="color: #ff9900;">Convert to PNG</h4>
+                        <p class="card-text lead">Convert your images to high-quality PNG format.</p>
+                        <a href="{{ url_for('convert_to_png') }}" class="btn btn-lg text-white" style="background-color: #ff9900;">Try Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body">
+                        <h4 class="card-title" style="color: #ff9900;">Convert to HEIC</h4>
+                        <p class="card-text lead">Convert your images to high-quality HEIC format.</p>
+                        <a href="{{ url_for('convert_to_heic') }}" class="btn btn-lg text-white" style="background-color: #ff9900;">Try Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body">
+                        <h4 class="card-title" style="color: #ff9900;">Convert to WebP</h4>
+                        <p class="card-text lead">Convert your images to high-quality WebP format.</p>
+                        <a href="{{ url_for('convert_to_webp') }}" class="btn btn-lg text-white" style="background-color: #ff9900;">Try Now</a>
+                    </div>
+                </div>
+            </div>
+            
+                        
+
+            <!-- JPG to PDF Converter Card -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body">
+                        <h4 class="card-title" style="color: #ff9900;">JPG to PDF Converter</h4>
+                        <p class="card-text lead">Convert your JPG or JPEG images into high-quality PDFs.</p>
+                        <a href="{{ url_for('jpg_to_pdf') }}" class="btn btn-lg text-white" style="background-color: #ff9900;">Try Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body">
+                        <h4 class="card-title" style="color: #ff9900;">PNG to PDF Converter</h4>
+                        <p class="card-text lead">Convert your PNG images into high-quality PDFs.</p>
+                        <a href="{{ url_for('png_to_pdf') }}" class="btn btn-lg text-white" style="background-color: #ff9900;">Try Now</a>
+                    </div>
+                </div>
+            </div>            
+            <!-- SVG to PDF Converter Card -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body">
+                        <h4 class="card-title" style="color: #ff9900;">SVG to PDF Converter</h4>
+                        <p class="card-text lead">Convert your SVG files into high-quality PDFs.</p>
+                        <a href="{{ url_for('svg_to_pdf') }}" class="btn btn-lg text-white" style="background-color: #ff9900;">Try Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- WebP to PDF Converter Card -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body">
+                        <h4 class="card-title" style="color: #ff9900;">WebP to PDF Converter</h4>
+                        <p class="card-text lead">Convert your WebP images into high-quality PDFs.</p>
+                        <a href="{{ url_for('webp_to_pdf') }}" class="btn btn-lg text-white" style="background-color: #ff9900;">Try Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HEIC to PDF Converter Card -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body">
+                        <h4 class="card-title" style="color: #ff9900;">HEIC to PDF Converter</h4>
+                        <p class="card-text lead">Convert your HEIC images into high-quality PDFs.</p>
+                        <a href="{{ url_for('heic_to_pdf') }}" class="btn btn-lg text-white" style="background-color: #ff9900;">Try Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BMP to PDF Converter Card -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body">
+                        <h4 class="card-title" style="color: #ff9900;">BMP to PDF Converter</h4>
+                        <p class="card-text lead">Convert your BMP images into high-quality PDFs.</p>
+                        <a href="{{ url_for('bmp_to_pdf') }}" class="btn btn-lg text-white" style="background-color: #ff9900;">Try Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TIFF to PDF Converter Card -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body">
+                        <h4 class="card-title" style="color: #ff9900;">TIFF to PDF Converter</h4>
+                        <p class="card-text lead">Convert your TIFF files into high-quality PDFs.</p>
+                        <a href="{{ url_for('tiff_to_pdf') }}" class="btn btn-lg text-white" style="background-color: #ff9900;">Try Now</a>
+                    </div>
+                </div>
+            </div>
+
+
+            
+        </div>
+    </div>
+
+    <!-- Include Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

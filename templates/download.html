@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Download Favicons</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    {% include 'head-scripts.html' %}
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <div class="container">
+        <h1 class="mt-5">Your Favicons are Ready!</h1>
+        <a href="{{ url_for('download_zip') }}" class="btn text-white" style="background-color: #ff9900;">Download Favicons</a>
+        <h1 class="my-5">Installation Instructions</h1>
+        {% include 'instructions.html' %}
+    </div>
+    <!-- Include Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

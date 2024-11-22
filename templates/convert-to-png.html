@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Convert to PNG</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    {% include 'head-scripts.html' %}
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <div class="container">
+        <h1 class="mt-5">Convert to PNG</h1>
+        <form action="{{ url_for('convert_to_png') }}" method="post" enctype="multipart/form-data">
+            <div class="upload-area" id="uploadfile">
+                <p class="lead">Drag and Drop your image here<br/>or<br/></p>
+                <input class="choose-file p-2 text-center lead" type="file" name="file" id="file" accept="image/*">
+            </div>
+            <button type="submit" class="btn mt-3 text-white lead" style="background-color: #ff9900;">Convert to PNG</button>
+        </form>
+    </div>
+    <!-- Include Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #ff9900;">
+    <div class="container">
+        <!-- Logo or brand -->
+        <a class="navbar-brand" href="{{ url_for('landing_page') }}">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="img 2 img logo" style="height: 40px; width: auto; margin-right: 10px;">
+        </a>
+
+        <!-- Hamburger button for mobile devices -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Collapsible content -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <!-- Favicon Generator -->
+                <li class="nav-item border rounded m-2 text-center lead">
+                    <a class="nav-link text-white" href="{{ url_for('favicon_generator') }}">Favicon Generator</a>
+                </li>
+
+                <!-- Image Converters Dropdown -->
+                <li class="nav-item dropdown border rounded m-2 text-center lead">
+                    <a class="nav-link dropdown-toggle text-white" href="#" id="imageConvertersDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Image to PDF Converters
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="imageConvertersDropdown">
+                        <a class="dropdown-item" href="{{ url_for('jpg_to_pdf') }}">JPG to PDF Converter</a>
+                        <a class="dropdown-item" href="{{ url_for('png_to_pdf') }}">PNG to PDF Converter</a>
+                        <a class="dropdown-item" href="{{ url_for('heic_to_pdf') }}">HEIC to PDF Converter</a>
+                        <a class="dropdown-item" href="{{ url_for('webp_to_pdf') }}">WEBP to PDF Converter</a>
+                        <a class="dropdown-item" href="{{ url_for('svg_to_pdf') }}">SVG to PDF Converter</a>
+                        <a class="dropdown-item" href="{{ url_for('bmp_to_pdf') }}">BMP to PDF Converter</a>
+                        <a class="dropdown-item" href="{{ url_for('tiff_to_pdf') }}">TIFF to PDF Converter</a>
+                    </div>
+                </li>
+                <!-- Convert to JPEG -->
+                <li class="nav-item dropdown border rounded m-2 text-center lead">
+                    <a class="nav-link dropdown-toggle text-white" href="#" id="imageConvertersDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Image to Image Converters
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="imageConvertersDropdown">
+                        <a class="dropdown-item" href="{{ url_for('convert_to_tiff') }}">Image to TIFF Converter</a>
+                        <a class="dropdown-item" href="{{ url_for('convert_to_png') }}">Image to PNG Converter</a>
+                        <a class="dropdown-item" href="{{ url_for('convert_to_heic') }}">Image to HEIC Converter</a>
+                        <a class="dropdown-item" href="{{ url_for('convert_to_jpeg') }}">Image to JPEG Converter</a>
+                        <a class="dropdown-item" href="{{ url_for('convert_to_webp') }}">Image to WEBP Converter</a>
+                    </div>
+                </li>
+                <!-- Blog -->
+                <li class="nav-item border rounded m-2 text-center lead">
+                    <a class="nav-link text-white" href="{{ url_for('blog') }}">Blog</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,30 @@
+.upload-area {
+    border: 2px dashed #ccc;
+    border-radius: 20px;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.upload-area.dragover {
+    background-color: #f0f0f0;
+}
+
+.choose-file {
+    background-color: #ff9900;
+    color: white;
+    border-radius: 10px;
+}
+
+@font-face {
+    font-family: 'PoppinsBold';
+    src: url('../fonts/Poppins-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+h1 {
+    font-family: 'PoppinsBold', sans-serif; /* Fallback to sans-serif if the custom font fails */
+    color: #2e2e2e;
+}
