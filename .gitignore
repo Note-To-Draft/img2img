@@ -17,5 +17,9 @@ venv/
 .DS_Store
 Thumbs.db
 
-# Static and uploads
-static/uploads/
+# Ignore all files in static/uploads/
+static/uploads/*
+
+# But don't ignore .gitkeep
+!static/uploads/.gitkeep
+

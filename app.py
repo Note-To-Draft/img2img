@@ -580,5 +580,13 @@ def blog():
     return render_template('blog.html')
 
 
+@app.route('/webp-to-png-complete-guide')
+def webp_to_png_complete_guide():
+    return render_template('webp-to-png-complete-guide.html')
+
+@app.route('/favicon-builder-create-custom-favicons')
+def favicon_builder_create_custom_favicons():
+    return render_template('favicon-builder-create-custom-favicons.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
