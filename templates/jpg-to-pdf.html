@@ -2,7 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>JPG to PDF Converter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Online JPG to PDF Converter - Fast and Secure</title>
+    <meta name="description" content="Easily convert JPG images to PDF files online. Free, fast, and secure JPG to PDF converter with no watermarks. Perfect for professionals and students.">
+    <meta name="keywords" content="JPG to PDF, convert JPG to PDF, image to PDF converter, free JPG to PDF, online JPG to PDF">
+    <link rel="canonical" href="{{ request.url }}" />
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     {% include 'head-scripts.html' %}
     <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
@@ -10,15 +14,51 @@
 <body>
     {% include 'navbar.html' %}
     <div class="container">
-        <h1 class="mt-5">JPG to PDF Converter</h1>
-        <form action="{{ url_for('jpg_to_pdf') }}" method="post" enctype="multipart/form-data">
+        <h1 class="mt-5 text-center">Free Online JPG to PDF Converter</h1>
+        <p class="text-center lead">Easily convert your JPG images to high-quality PDF files in seconds. No watermarks, no limits!</p>
+
+        <form action="{{ url_for('jpg_to_pdf') }}" method="post" enctype="multipart/form-data" class="text-center">
             <div class="upload-area" id="uploadfile">
-                <p class="lead">Drag and Drop image here<br/>or<br/></p>
-                <input class="choose-file p-2 text-center lead" type="file" name="file" id="file" accept="image/jpeg">
+                <p class="lead">Drag and Drop your image here<br/>or<br/></p>
+                <input class="choose-file p-2 text-center lead" type="file" name="file" id="file" accept="image/jpeg" required>
             </div>
             <button type="submit" class="btn mt-3 text-white lead" style="background-color: #ff9900;">Convert to PDF</button>
         </form>
+
+        <!-- SEO-friendly content section -->
+        <section class="mt-5">
+            <h2>Why Convert JPG to PDF?</h2>
+            <p>
+                Converting JPG images to PDF files provides a more professional format for sharing, printing, or archiving. PDFs ensure consistent layout and compatibility across devices. Whether you need to create a photo album, compile scanned documents, or share images with a client, our free JPG to PDF tool has you covered.
+            </p>
+
+            <h3>Features of Our JPG to PDF Tool</h3>
+            <ul>
+                <li>Fast and secure conversions</li>
+                <li>No watermarks or hidden fees</li>
+                <li>Supports multiple image formats</li>
+                <li>Mobile-friendly and easy to use</li>
+            </ul>
+
+            <h3>How to Use Our JPG to PDF Converter</h3>
+            <ol>
+                <li>Drag and drop your JPG file or click "Choose File" to upload.</li>
+                <li>Click the "Convert to PDF" button.</li>
+                <li>Download your converted PDF file instantly.</li>
+            </ol>
+
+            <h3>FAQs about JPG to PDF Conversion</h3>
+            <h4>1. Is this tool free to use?</h4>
+            <p>Yes, our JPG to PDF converter is 100% free and does not add watermarks to your files.</p>
+
+            <h4>2. Is my data secure?</h4>
+            <p>All uploaded files are processed locally and not stored on our servers, ensuring your privacy.</p>
+
+            <h4>3. Can I convert multiple JPG files to one PDF?</h4>
+            <p>This feature is coming soon. For now, you can convert one image at a time.</p>
+        </section>
     </div>
+
     <!-- Include Bootstrap JS and dependencies -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
