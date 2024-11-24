@@ -491,6 +491,8 @@ def convert_to_png():
     return render_template('convert-to-png.html')
 
 
+from wand.image import Image as WandImage
+
 @app.route('/convert-to-heic', methods=['GET', 'POST'])
 def convert_to_heic():
     if request.method == 'POST':
@@ -509,11 +511,12 @@ def convert_to_heic():
             file.save(filepath)
             os.chmod(filepath, 0o600)  # Set secure permissions for uploaded file
 
-            # Convert the image to HEIC
+            # Convert the image to HEIC using ImageMagick
             try:
-                image = Image.open(filepath)
                 heic_path = os.path.splitext(filepath)[0] + ".heic"  # Replace extension with .heic
-                image.save(heic_path, "HEIC")  # HEIC format
+                with WandImage(filename=filepath) as img:
+                    img.format = 'heic'
+                    img.save(filename=heic_path)
 
                 # Return the HEIC for download
                 return send_file(heic_path, mimetype='image/heic', as_attachment=True, download_name=f"{os.path.splitext(filename)[0]}.heic")
@@ -523,6 +526,7 @@ def convert_to_heic():
             return "Invalid file type. Please upload a valid image.", 400
 
     return render_template('convert-to-heic.html')
+
 
 
 @app.route('/convert-to-webp', methods=['GET', 'POST'])
