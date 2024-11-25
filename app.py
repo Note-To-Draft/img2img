@@ -563,6 +563,41 @@ def convert_to_webp():
     return render_template('convert-to-webp.html')
 
 
+@app.route('/webp-to-png', methods=['GET', 'POST'])
+def webp_to_png():
+    if request.method == 'POST':
+        # Validate file presence in request
+        if 'file' not in request.files:
+            return "No file part in the request", 400
+
+        file = request.files['file']
+        if file.filename == '':
+            return "No file selected for upload", 400
+
+        # Validate file type
+        if file and allowed_file(file.filename, file, allowed_extensions={'webp'}):
+            filename = secure_filename(file.filename)
+            filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+            file.save(filepath)
+            os.chmod(filepath, 0o600)  # Set secure permissions for uploaded file
+
+            # Convert the image to PNG
+            try:
+                image = Image.open(filepath)
+                png_path = os.path.splitext(filepath)[0] + ".png"  # Replace extension with .png
+                image.save(png_path, "PNG")  # Save as PNG format
+
+                # Return the PNG for download
+                return send_file(png_path, mimetype='image/png', as_attachment=True, download_name=f"{os.path.splitext(filename)[0]}.png")
+            except Exception as e:
+                return f"An error occurred during conversion: {str(e)}", 500
+        else:
+            return "Invalid file type. Please upload a valid WebP image.", 400
+
+    return render_template('webp-to-png.html')
+
+
+
 @app.route('/download')
 def download():
     return render_template('download.html')

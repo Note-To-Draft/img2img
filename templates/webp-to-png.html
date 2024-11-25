@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Online WebP to PNG Converter - Fast and Secure</title>
+    <meta name="description" content="Convert WebP images to PNG files quickly and securely. Free online WebP to PNG converter with no watermarks. Perfect for professionals and designers.">
+    <meta name="keywords" content="WebP to PNG, convert WebP to PNG, image converter, free WebP to PNG, online WebP to PNG">
+    <link rel="canonical" href="{{ request.url }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    {% include 'head-scripts.html' %}
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <div class="container">
+        <h1 class="mt-5 text-center">Free Online WebP to PNG Converter</h1>
+        <p class="text-center lead">Easily convert your WebP images to high-quality PNG files in seconds. No watermarks, no limits!</p>
+
+        <form action="{{ url_for('webp_to_png') }}" method="post" enctype="multipart/form-data" class="text-center">
+            <div class="upload-area" id="uploadfile">
+                <p class="lead">Drag and Drop your WebP image here<br/>or<br/></p>
+                <input class="choose-file p-2 text-center lead" type="file" name="file" id="file" accept="image/webp" required>
+            </div>
+            <button type="submit" class="btn mt-3 text-white lead" style="background-color: #ff9900;">Convert to PNG</button>
+        </form>
+
+        <!-- SEO-friendly content section -->
+        <section class="mt-5">
+            <h2>Why Convert WebP to PNG?</h2>
+            <p>
+                While WebP is an efficient format for web use, PNG offers broader compatibility, especially for graphic design and printing. Converting WebP to PNG ensures that your images can be used across various platforms and software without quality loss.
+            </p>
+
+            <h3>Features of Our WebP to PNG Tool</h3>
+            <ul>
+                <li>Fast and secure conversions</li>
+                <li>No watermarks or hidden fees</li>
+                <li>Supports high-quality images</li>
+                <li>Mobile-friendly and easy to use</li>
+            </ul>
+
+            <h3>How to Use Our WebP to PNG Converter</h3>
+            <ol>
+                <li>Drag and drop your WebP file or click "Choose File" to upload.</li>
+                <li>Click the "Convert to PNG" button.</li>
+                <li>Download your converted PNG file instantly.</li>
+            </ol>
+
+            <h3>FAQs about WebP to PNG Conversion</h3>
+            <h4>1. Is this tool free to use?</h4>
+            <p>Yes, our WebP to PNG converter is 100% free and does not add watermarks to your files.</p>
+
+            <h4>2. Is my data secure?</h4>
+            <p>All uploaded files are processed locally and not stored on our servers, ensuring your privacy.</p>
+
+            <h4>3. Can I convert PNG to WebP instead?</h4>
+            <p>Yes, check out our <a href="{{ url_for('convert_to_webp') }}" style="color: #ff9900;">PNG to WebP converter</a>.</p>
+        </section>
+    </div>
+
+    <!-- Include Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
